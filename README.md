@@ -72,3 +72,13 @@ java -DdebugOperations -cp /path/to/swagger-codegen-cli.jar:/path/to/your.jar io
 
 Will, for example, output the debug info for operations.  You can use this info
 in the `api.mustache` file.
+
+### example
+
+```
+java -jar swagger-codegen-cli-2.4.6.jar meta -o client_code_gen -n myClientCodegen -p com.qiuwenqi.codegen
+
+mvn package
+
+java -cp target/myClientCodegen-swagger-codegen-1.0.0.jar:../swagger-codegen-cli-2.4.6.jar io.swagger.codegen.SwaggerCodegen generate -l myClientCodegen -i http://petstore.swagger.io/v2/swagger.json -o myClient
+```
